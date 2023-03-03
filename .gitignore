@@ -1,0 +1,4 @@
+*.txt
+*.csv
+/data
+/rust_code_to_convert
