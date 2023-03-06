@@ -4,19 +4,6 @@ use std::ops::{Range, RangeInclusive};
 use rand::prelude::*;
 use rand::distributions::uniform::Uniform;
 
-pub fn random_number(min: i32, max: i32) -> i32 {
-    let mut rng: ThreadRng = thread_rng();
-    let range: Uniform<i32> = Uniform::from(min..=max);
-    range.sample(&mut rng)
-}
-
-pub fn random_name(names: &Vec<String>) -> String {
-    let mut rng: ThreadRng = thread_rng();
-    let range: Uniform<usize> = Uniform::new(0, names.len());
-    let index: usize = rng.sample(range);
-    names[index].to_string()
-}
-
 pub fn day_from_i32(day_int: i32) -> String {
     let days_of_week: [&str; 7] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     days_of_week[day_int as usize].to_string()
