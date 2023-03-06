@@ -4,34 +4,6 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 
-pub fn generate_initials(first_name: String, middle_name: String, last_name: String) -> String {
-    let mut result: String = String::new();
-
-    if !first_name.is_empty() {
-        result.push(first_name.chars().next().unwrap());
-    }
-    if !middle_name.is_empty() {
-        result.push(middle_name.chars().next().unwrap());
-    }
-    if !last_name.is_empty() {
-        result.push(last_name.chars().next().unwrap());
-    }
-
-    result
-}
-
-pub fn add_quotes(input: &str) -> String {
-    format!("\"{}\"", input)
-}
-
-pub fn vector_to_string_with_quotes<T: ToString>(input: &Vec<T>) -> String {
-    let output: String = input.iter()
-        .map(|value| add_quotes(&value.to_string()))
-        .collect::<Vec<String>>()
-        .join(", ");
-    output.trim_end().to_string()
-}
-
 pub fn generate_curriculum_csv(filename: &str, field_headings: Vec<&str>, data: Vec<Vec<i32>>) {
     let path: &Path = Path::new(filename);
     let mut file: File = match File::create(&path) {
