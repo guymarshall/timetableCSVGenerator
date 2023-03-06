@@ -27,7 +27,8 @@ function array_to_string_with_quotes(array $input): string {
         return add_quotes(strval($value));
     }, $input);
 
-    return implode(", ", $output);
+    $result = implode(", ", $output);
+    return substr($result, 0, -2);
 }
 
 function generate_initials(string $first_name = '', string $middle_name = '', string $last_name = ''): string
