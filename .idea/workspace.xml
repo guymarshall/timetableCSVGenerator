@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ce72b2e-24eb-4496-a458-b650dc09cab3" name="Changes" comment="Add random_subject_name" />
+    <list default="true" id="9ce72b2e-24eb-4496-a458-b650dc09cab3" name="Changes" comment="Windows to Linux CRLF" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/guy.marshall/Downloads/PHP/timetableCSVGenerator",
+    "last_opened_file_path": "/home/guy/PHP/timetableCSVGenerator",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678104448322</updated>
       <workItem from="1678104449296" duration="1951000" />
+      <workItem from="1678134346474" duration="214000" />
     </task>
     <task id="LOCAL-00001" summary="Add random.php">
       <created>1678104834696</created>
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678106407607</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Windows to Linux CRLF">
+      <created>1678134535575</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678134535576</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +118,7 @@
     <MESSAGE value="Add random_length_random_array" />
     <MESSAGE value="Add random_teacher_type" />
     <MESSAGE value="Add random_subject_name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add random_subject_name" />
+    <MESSAGE value="Windows to Linux CRLF" />
+    <option name="LAST_COMMIT_MESSAGE" value="Windows to Linux CRLF" />
   </component>
 </project>
