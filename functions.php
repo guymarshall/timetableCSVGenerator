@@ -6,8 +6,7 @@ function get_random_name(string $filename): string
     $first_names = explode("\n", $contents);
 
     $key = array_rand($first_names);
-    $first_name = $first_names[$key];
-    return $first_name;
+    return $first_names[$key];
 }
 
 function generate_csv(string $filename, array $field_headings, array $data): void
