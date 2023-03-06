@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ce72b2e-24eb-4496-a458-b650dc09cab3" name="Changes" comment="Add random_subject_name" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MdjeXUjUmagOyKr5dGuvxSxWPU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/guy.marshall/Downloads/PHP/timetableCSVGenerator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ce72b2e-24eb-4496-a458-b650dc09cab3" name="Changes" comment="" />
+      <created>1678104448322</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678104448322</updated>
+      <workItem from="1678104449296" duration="1951000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add random.php">
+      <created>1678104834696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678104834696</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add random_name">
+      <created>1678105694515</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678105694515</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add day_from_int">
+      <created>1678105856374</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678105856374</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add random_room">
+      <created>1678105947230</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678105947230</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add random_length_random_array">
+      <created>1678106031618</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678106031618</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add random_teacher_type">
+      <created>1678106325221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678106325221</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add random_subject_name">
+      <created>1678106407607</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678106407607</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add random.php" />
+    <MESSAGE value="Add random_name" />
+    <MESSAGE value="Add day_from_int" />
+    <MESSAGE value="Add random_room" />
+    <MESSAGE value="Add random_length_random_array" />
+    <MESSAGE value="Add random_teacher_type" />
+    <MESSAGE value="Add random_subject_name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add random_subject_name" />
+  </component>
+</project>
