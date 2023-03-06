@@ -1,6 +1,7 @@
 <?php
 
-function get_random_name(string $filename) {
+function get_random_name(string $filename): string
+{
     $contents = file_get_contents($filename);
     $first_names = explode("\n", $contents);
 
@@ -9,7 +10,8 @@ function get_random_name(string $filename) {
     return $first_name;
 }
 
-function generate_csv(string $filename, array $field_headings, array $data) {
+function generate_csv(string $filename, array $field_headings, array $data): void
+{
     $file = fopen($filename, 'w');
 
     fputcsv($file, $field_headings);
@@ -21,6 +23,7 @@ function generate_csv(string $filename, array $field_headings, array $data) {
     fclose($file);
 }
 
-function generate_initials(string $first_name = '', string $middle_name = '', string $last_name = '') {
+function generate_initials(string $first_name = '', string $middle_name = '', string $last_name = ''): string
+{
     return $first_name[0].$middle_name[0].$last_name[0];
 }
