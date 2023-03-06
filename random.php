@@ -22,3 +22,13 @@ function random_room(): string
     $max = count($rooms) - 1;
     return $rooms[rand($min, $max)];
 }
+
+function random_length_random_array(): array
+{
+    $length = rand(1, 11);
+    $output = [];
+    for ($i = 0; $i < $length; $i++) {
+        $output[] = rand(1, 11);
+    }
+    return $output;
+}
