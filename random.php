@@ -54,3 +54,12 @@ function random_teacher_type(string $type_type): string
             return $names[0];
     }
 }
+
+function random_subject_name(): string
+{
+    $subject_names = ["Maths", "Biology", "Chemistry", "Physics", "History", "Geography", "ICT", "German", "French", "DT", "PE", "English", "Personal Development", "RE"];
+
+    $min = 0;
+    $max = count($subject_names) - 1;
+    return $subject_names[rand($min, $max)];
+}
