@@ -1,14 +1,5 @@
 <?php
 
-function get_random_name(string $filename): string
-{
-    $contents = file_get_contents($filename);
-    $first_names = explode("\n", $contents);
-
-    $key = array_rand($first_names);
-    return $first_names[$key];
-}
-
 function generate_csv(string $filename, array $field_headings, array $data): void
 {
     $file = fopen($filename, 'w');

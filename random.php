@@ -61,3 +61,12 @@ function random_subject_name(): string
     $max = count($subject_names) - 1;
     return $subject_names[rand($min, $max)];
 }
+
+function get_random_name(string $filename): string
+{
+    $contents = file_get_contents($filename);
+    $first_names = explode("\n", $contents);
+
+    $key = array_rand($first_names);
+    return $first_names[$key];
+}
