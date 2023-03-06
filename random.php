@@ -38,20 +38,12 @@ function random_teacher_type(string $type_type): string
     $names = ["Teacher", "Cover Teacher", "Trainee Teacher", "Head of Department"];
     $display_names = ["Teacher", "Cover", "Trainee", "Head"];
 
-    switch ($type_type)
-    {
-        case 'name':
-            $min = 0;
-            $max = count($names) - 1;
-
-            return $names[rand($min, $max)];
-        case 'display_name':
-            $min = 0;
-            $max = count($display_names) - 1;
-
-            return $display_names[rand($min, $max)];
-        default:
-            return $names[0];
+    if ($type_type == 'name') {
+        return $names[rand(0, count($names))];
+    } else if ($type_type == 'displayName') {
+        return $display_names[rand(0, count($display_names))];
+    } else {
+        return $names[0];
     }
 }
 
