@@ -2,15 +2,16 @@
 
 function generate_csv(string $filename, array $field_headings, array $data): void
 {
-    // $field_headings - remove trailing comma
-    // $data - remove trailing comma
-    // make separate function for each csv (without passing $filename, hardcode it in function instead)
-    $file = fopen($filename, 'w');
+    $file = fopen($filename, "w");
+    if ($file === false) {
+        die("Couldn't create $filename");
+    }
 
-    fputcsv($file, $field_headings);
+    $headings = rtrim(implode(",", $field_headings), ",");
+    fputcsv($file, $headings);
 
-    foreach ($data as $row)
-    {
+    foreach ($data as $record) {
+        $row = rtrim(implode(",", $record), ",");
         fputcsv($file, $row);
     }
 
