@@ -48,7 +48,7 @@ function generate_curriculum_csv($filename, $field_headings, $data) {
     }
 
     foreach ($data as $record) {
-        $line_including_trailing_comma = implode(",", $record) . ",";
+        $line_including_trailing_comma = implode(",", $record);
         $line = rtrim($line_including_trailing_comma, ",");
         if (fwrite($file, $line . "\n") === false) {
             die("Couldn't write to $filename");
