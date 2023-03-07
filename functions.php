@@ -7,11 +7,11 @@ function generate_csv(string $filename, array $field_headings, array $data): voi
         die("Couldn't create $filename");
     }
 
-    $headings = rtrim(implode(",", $field_headings), ",");
+    $headings = explode(",", rtrim(implode(",", $field_headings), ","));
     fputcsv($file, $headings);
 
     foreach ($data as $record) {
-        $row = rtrim(implode(",", $record), ",");
+        $row = explode(",", rtrim(implode(",", $record), ","));
         fputcsv($file, $row);
     }
 
