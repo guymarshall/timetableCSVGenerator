@@ -1,9 +1,12 @@
 <?php
 
-function file_to_array(string $filename): array|false {
+/**
+ * @throws Exception
+ */
+function file_to_array(string $filename): array {
     $file = fopen($filename, "r");
     if ($file === false) {
-        return false;
+        throw new Exception("Unable to open file: $filename");
     }
 
     $words = [];
@@ -16,9 +19,10 @@ function file_to_array(string $filename): array|false {
 }
 
 function get_names(string $filename): array {
-    $names = file_to_array($filename);
-    if ($names === false) {
-        echo "An error occurred when trying to open the file.";
+    try {
+        $names = file_to_array($filename);
+    } catch (Exception $e) {
+        echo $e->getMessage();
         exit(1);
     }
 
