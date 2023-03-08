@@ -42,11 +42,14 @@ require_once "Functions.php";
 require_once "Random.php";
 
 $required_keys = ["curriculumCount", "periodScheduleCount", "roomCount", "studentCount", "subjectCount", "teacherCount", "teacherTypeCount"];
-foreach ($required_keys as $key) {
-    if (!isset($_GET[$key])) {
+foreach ($required_keys as $key)
+{
+    if (!isset($_GET[$key]))
+    {
         exit("All fields must be filled in.");
     }
-    if ($_GET[$key] <= 0) {
+    if ($_GET[$key] <= 0)
+    {
         exit("All values must be more than 0.");
     }
 }
