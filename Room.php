@@ -1,7 +1,8 @@
 <?php
 
 class Room {
-    public function generate_csv(string $filename, array $field_headings, array $data): void {
+    public function generate_csv(string $filename, array $field_headings, array $data): void
+    {
         $file = fopen($filename, "w");
         if ($file === false) {
             die("Couldn't create $filename");

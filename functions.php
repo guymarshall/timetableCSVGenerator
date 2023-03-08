@@ -1,10 +1,12 @@
 <?php
 
-function add_quotes(string $input): string {
+function add_quotes(string $input): string
+{
     return '"'.$input.'"';
 }
 
-function array_to_quoted_string(array $input): string {
+function array_to_quoted_string(array $input): string
+{
     $output = array_map(function ($value) {
         return add_quotes(strval($value));
     }, $input);

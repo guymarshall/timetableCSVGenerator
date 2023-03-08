@@ -3,7 +3,8 @@
 /**
  * @throws Exception
  */
-function file_to_array(string $filename): array {
+function file_to_array(string $filename): array
+{
     $file = fopen($filename, "r");
     if ($file === false) {
         throw new Exception("Unable to open file: $filename");
@@ -18,7 +19,8 @@ function file_to_array(string $filename): array {
     return $words;
 }
 
-function get_names(string $filename): array {
+function get_names(string $filename): array
+{
     try {
         $names = file_to_array($filename);
     } catch (Exception $e) {
