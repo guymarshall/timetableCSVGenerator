@@ -36,7 +36,7 @@
 
 <?php
 
-require_once 'functions.php';
+require_once 'Functions.php';
 
 // add PHP for generating CSV files here isset($_GET) check
 
