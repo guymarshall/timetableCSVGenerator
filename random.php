@@ -27,7 +27,8 @@ function random_length_random_array(): array
 {
     $length = rand(1, 11);
     $output = [];
-    for ($i = 0; $i < $length; $i++) {
+    for ($i = 0; $i < $length; $i++)
+    {
         $output[] = rand(1, 11);
     }
     return $output;
@@ -38,11 +39,16 @@ function random_teacher_type(string $type_type): string
     $names = ["Teacher", "Cover Teacher", "Trainee Teacher", "Head of Department"];
     $display_names = ["Teacher", "Cover", "Trainee", "Head"];
 
-    if ($type_type == 'name') {
+    if ($type_type == 'name')
+    {
         return $names[rand(0, count($names))];
-    } else if ($type_type == 'displayName') {
+    }
+    else if ($type_type == 'displayName')
+    {
         return $display_names[rand(0, count($display_names))];
-    } else {
+    }
+    else
+    {
         return $names[0];
     }
 }

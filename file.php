@@ -6,12 +6,14 @@
 function file_to_array(string $filename): array
 {
     $file = fopen($filename, "r");
-    if ($file === false) {
+    if ($file === false)
+    {
         throw new Exception("Unable to open file: $filename");
     }
 
     $words = [];
-    while (($word = fgets($file)) !== false) {
+    while (($word = fgets($file)) !== false)
+    {
         $words[] = trim($word);
     }
     fclose($file);
@@ -21,9 +23,12 @@ function file_to_array(string $filename): array
 
 function get_names(string $filename): array
 {
-    try {
+    try
+    {
         $names = file_to_array($filename);
-    } catch (Exception $e) {
+    }
+    catch (Exception $e)
+    {
         echo $e->getMessage();
         exit(1);
     }
