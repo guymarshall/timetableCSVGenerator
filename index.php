@@ -41,8 +41,6 @@ require_once 'File.php';
 require_once 'Functions.php';
 require_once 'Random.php';
 
-// add PHP for generating CSV files here isset($_GET) check
-
 if (isset($_GET['curriculumCount']) && isset($_GET['periodScheduleCount']) && isset($_GET['roomCount']) && isset($_GET['studentCount']) && isset($_GET['subjectCount']) && isset($_GET['teacherCount']) && isset($_GET['teacherTypeCount']))
 {
     echo 'data has been entered into all input fields';
