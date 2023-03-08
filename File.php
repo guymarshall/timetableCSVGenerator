@@ -27,7 +27,7 @@ class File
     {
         try
         {
-            $names = file_to_array($filename);
+            $names = $this->file_to_array($filename);
         }
         catch (Exception $e)
         {
