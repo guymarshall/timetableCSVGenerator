@@ -1,37 +1,40 @@
 <?php
 
-/**
- * @throws Exception
- */
-function file_to_array(string $filename): array
+class File
 {
-    $file = fopen($filename, "r");
-    if ($file === false)
+    /**
+     * @throws Exception
+     */
+    function file_to_array(string $filename): array
     {
-        throw new Exception("Unable to open file: $filename");
+        $file = fopen($filename, "r");
+        if ($file === false)
+        {
+            throw new Exception("Unable to open file: $filename");
+        }
+
+        $words = [];
+        while (($word = fgets($file)) !== false)
+        {
+            $words[] = trim($word);
+        }
+        fclose($file);
+
+        return $words;
     }
 
-    $words = [];
-    while (($word = fgets($file)) !== false)
+    function get_names(string $filename): array
     {
-        $words[] = trim($word);
-    }
-    fclose($file);
+        try
+        {
+            $names = file_to_array($filename);
+        }
+        catch (Exception $e)
+        {
+            echo $e->getMessage();
+            exit(1);
+        }
 
-    return $words;
-}
-
-function get_names(string $filename): array
-{
-    try
-    {
-        $names = file_to_array($filename);
+        return $names;
     }
-    catch (Exception $e)
-    {
-        echo $e->getMessage();
-        exit(1);
-    }
-
-    return $names;
 }
