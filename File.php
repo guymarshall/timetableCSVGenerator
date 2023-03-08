@@ -5,7 +5,7 @@ class File
     /**
      * @throws Exception
      */
-    function file_to_array(string $filename): array
+    static function file_to_array(string $filename): array
     {
         $file = fopen($filename, "r");
         if ($file === false)
@@ -23,11 +23,11 @@ class File
         return $words;
     }
 
-    function get_names(string $filename): array
+    public static function get_names(string $filename): array
     {
         try
         {
-            $names = $this->file_to_array($filename);
+            $names = self::file_to_array($filename);
         }
         catch (Exception $e)
         {
