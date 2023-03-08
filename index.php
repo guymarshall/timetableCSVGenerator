@@ -57,6 +57,14 @@ foreach ($required_keys as $key)
     }
 }
 
+$curriculum_count = $_GET['curriculumCount'];
+$period_schedule_count = $_GET['periodScheduleCount'];
+$room_count = $_GET['roomCount'];
+$student_count = $_GET['studentCount'];
+$subject_count = $_GET['subjectCount'];
+$teacher_count = $_GET['teacherCount'];
+$teacher_type_count = $_GET['teacherTypeCount'];
+
 // fix below
 $curriculum_data = [];
 for ($i = 0; $i < $_GET["curriculumCount"]; $i++)
