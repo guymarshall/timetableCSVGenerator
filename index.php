@@ -36,7 +36,10 @@
 
 <?php
 
+require_once 'CSV.php';
+require_once 'File.php';
 require_once 'Functions.php';
+require_once 'Random.php';
 
 // add PHP for generating CSV files here isset($_GET) check
 
