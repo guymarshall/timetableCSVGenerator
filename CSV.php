@@ -14,7 +14,7 @@ class CSV
         }
         $this->data[] = $newData;
     }
-    public function generate_csv(string $filename, array $field_headings, array $data): void
+    public function generate_csv(string $filename, array $field_headings): void
     {
         $file = fopen($filename, "w");
         if ($file === false)
@@ -25,7 +25,7 @@ class CSV
         $headings = explode(",", rtrim(implode(",", $field_headings), ","));
         fputcsv($file, $headings);
 
-        foreach ($data as $record)
+        foreach ($this->data as $record)
         {
             $row = explode(",", rtrim(implode(",", $record), ","));
             fputcsv($file, $row);
