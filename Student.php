@@ -19,12 +19,6 @@ class Student {
     }
 
     /*pub fn generate_student_csv(filename: &str, field_headings: Vec<&str>, data: Vec<Vec<(String, String, String, String, String)>>) {
-        let headings_including_trailing_comma: String = field_headings.iter().map(|&heading| heading.to_string() + ",").collect();
-        let headings: String = headings_including_trailing_comma[0..].to_string();
-        if let Err(why) = writeln!(file, "{}", headings) {
-            panic!("couldn't write to {}: {}", path.display(), why);
-        }
-
         for record in data {
             let line_including_trailing_comma: String = record
             .iter()
