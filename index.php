@@ -66,18 +66,18 @@ $subject_count = $_GET['subjectCount'];
 $teacher_count = $_GET['teacherCount'];
 $teacher_type_count = $_GET['teacherTypeCount'];
 
-// fix below
-$curriculum_data = [];
-for ($i = 0; $i < $_GET["curriculumCount"]; $i++)
+$curriculum = new CSV();
+for ($i = 0; $i < $curriculum_count; $i++)
 {
-    $curriculum_data[] = [
-        (string) $i,
-        random_number(1, $_GET["subjectCount"] + 1),
-        random_number(1, 9)
-    ];
+    $curriculum->add_data([
+        $i + 1,
+        rand(1, $subject_count + 1),
+        rand(1, 9)
+    ]);
 }
-generate_csv("Curriculum.csv", ["studentID", "subjectID", "numberOfLessonsPerWeek"], $curriculum_data);
+$curriculum->generate_csv("Curriculum.csv", ["StudentID", "SubjectID", "NumberOfLessonsPerWeek"]);
 
+// fix below
 $period_schedule_data = [];
 for ($i = 0; $i < $_GET["periodScheduleCount"]; $i++)
 {
