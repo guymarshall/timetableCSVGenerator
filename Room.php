@@ -19,12 +19,6 @@ class Room {
     }
 
     /*pub fn generate_room_csv(filename: &str, field_headings: Vec<&str>, data: Vec<Vec<(i32, &str, i32, String, String)>>) {
-        let path: &Path = Path::new(filename);
-        let mut file: File = match File::create(&path) {
-            Err(why) => panic!("couldn't create {}: {}", path.display(), why),
-            Ok(file) => file,
-        };
-
         let headings_including_trailing_comma: String = field_headings.iter().map(|&heading| heading.to_string() + ",").collect();
         let headings: String = headings_including_trailing_comma[0..].to_string();
         if let Err(why) = writeln!(file, "{}", headings) {
