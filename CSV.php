@@ -7,12 +7,12 @@ class CSV
     /**
      * @throws Exception
      */
-    public function add_data($newData): void
+    public function add_data($new_data): void
     {
-        if (!is_array($newData)) {
+        if (!is_array($new_data)) {
             throw new Exception("Invalid data type. Only arrays can be appended.");
         }
-        $this->data[] = $newData;
+        $this->data[] = $new_data;
     }
     public function generate_csv(string $filename, array $field_headings): void
     {
