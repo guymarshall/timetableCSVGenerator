@@ -41,7 +41,7 @@ require_once "File.php";
 require_once "Functions.php";
 require_once "Random.php";
 
-if (!isset($_GET["curriculumCount"], $_GET["periodScheduleCount"], $_GET["roomCount"], $_GET["studentCount"], $_GET["subjectCount"], $_GET["teacherCount"], $_GET["teacherTypeCount"])
+if (!isset($_GET["curriculumCount"], $_GET["periodScheduleCount"], $_GET["roomCount"], $_GET["studentCount"], $_GET["subjectCount"], $_GET["teacherCount"], $_GET["teacherTypeCount"]))
 {
     exit("All fields must be filled in.");
 }
