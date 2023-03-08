@@ -10,7 +10,7 @@ class CSV
     public function add_data($newData): void
     {
         if (!is_array($newData)) {
-            throw new Exception('Invalid data type. Only arrays can be appended.');
+            throw new Exception("Invalid data type. Only arrays can be appended.");
         }
         $this->data[] = $newData;
     }
