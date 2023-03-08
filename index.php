@@ -47,8 +47,6 @@ foreach ($required_keys as $key) {
         exit("All fields must be filled in.");
     }
 }
-
-$required_keys = ["curriculumCount", "periodScheduleCount", "roomCount", "studentCount", "subjectCount", "teacherCount", "teacherTypeCount"];
 foreach ($required_keys as $key) {
     if ($_GET[$key] <= 0) {
         exit("All values must be more than 0.");
