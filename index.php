@@ -46,14 +46,14 @@ if (!isset($_GET["curriculumCount"], $_GET["periodScheduleCount"], $_GET["roomCo
     exit("All fields must be filled in.");
 }
 
+if ($_GET["curriculumCount"] <= 0 || $_GET["periodScheduleCount"] <= 0 || $_GET["roomCount"] <= 0 || $_GET["studentCount"] <= 0 || $_GET["subjectCount"] <= 0 || $_GET["teacherCount"] <= 0 || $_GET["teacherTypeCount"] <= 0)
+{
+    exit("All values must be more than 0.");
+}
+
 if (isset($_GET["curriculumCount"]) && isset($_GET["periodScheduleCount"]) && isset($_GET["roomCount"]) && isset($_GET["studentCount"]) && isset($_GET["subjectCount"]) && isset($_GET["teacherCount"]) && isset($_GET["teacherTypeCount"]))
 {
     echo "data has been entered into all input fields";
-
-    if ($_GET["curriculumCount"] <= 0 || $_GET["periodScheduleCount"] <= 0 || $_GET["roomCount"] <= 0 || $_GET["studentCount"] <= 0 || $_GET["subjectCount"] <= 0 || $_GET["teacherCount"] <= 0 || $_GET["teacherTypeCount"] <= 0)
-    {
-        exit("All counts must be more than 0");
-    }
 
     $curriculum_data = [];
     for ($i = 0; $i < $_GET["curriculumCount"]; $i++)
