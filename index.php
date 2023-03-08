@@ -52,7 +52,8 @@ foreach ($required_keys as $key)
     {
         exit("All values must be more than 0.");
     }
-    if (!ctype_digit($_GET[$key])) {
+    if (!ctype_digit($_GET[$key]))
+    {
         exit("Invalid input. Only numbers are allowed.");
     }
 }
