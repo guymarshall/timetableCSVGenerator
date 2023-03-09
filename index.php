@@ -148,8 +148,8 @@ for ($i = 0; $i < $teacher_count; $i++)
         $last_name,
         Functions::generate_initials($first_name, $middle_name, $last_name),
         rand(0, 100),
-        Random::generate_random_length_random_array(),
-        Random::generate_random_length_random_array()
+        Random::random_length_random_array(),
+        Random::random_length_random_array()
     ]);
 }
 $teacher->generate_csv("Teacher.csv", ["ID", "FirstName", "MiddleName", "Surname", "Initials", "TeacherTypeID", "SubjectTaughtIDs", "RoomTaughtIDs"]);
