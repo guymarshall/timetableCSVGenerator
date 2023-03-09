@@ -109,7 +109,7 @@ for ($i = 0; $i < $room_count; $i++)
     try {
         $room->add_data([
             $i + 1,
-            Random::random_room(),
+            Functions::add_quotes(Random::random_room()),
             rand(15, 31)
         ]);
     } catch (Exception $e) {
