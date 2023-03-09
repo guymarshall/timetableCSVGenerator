@@ -4,7 +4,7 @@ class Functions
 {
     public static function add_quotes(string $input): string
     {
-        return '"'.$input.'"';
+        return sprintf("\"%s\"", $input);
     }
 
     public static function array_to_quoted_string(array $input): string
