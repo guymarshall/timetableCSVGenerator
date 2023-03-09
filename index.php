@@ -147,11 +147,11 @@ for ($i = 0; $i < $subject_count; $i++)
     try {
         $subject->add_data([
             $i + 1,
-            Random::random_subject_name(),
+            Functions::add_quotes(Random::random_subject_name()),
             rand(7, 13),
-            rand(1, 8),
+            Functions::add_quotes(rand(1, 8)),
             rand(15, 31),
-            rand(1, 8)
+            Functions::array_to_quoted_string(Random::random_length_random_array())
         ]);
     } catch (Exception $e) {
         echo $e->getMessage();
