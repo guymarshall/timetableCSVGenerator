@@ -82,7 +82,7 @@ for ($i = 0; $i < $period_schedule_count; $i++)
 {
     $period_schedule->add_data([
         $i + 1,
-        day_from_int($i),
+        Random::day_from_int($i),
         rand(1, 6)
     ]);
 }
@@ -93,7 +93,7 @@ for ($i = 0; $i < $room_count; $i++)
 {
     $room->add_data([
         $i + 1,
-        random_room(),
+        Random::random_room(),
         rand(15, 31)
     ]);
 }
@@ -111,7 +111,7 @@ for ($i = 0; $i < $student_count; $i++)
         $first_name,
         $middle_name,
         $last_name,
-        generate_initials($first_name, $middle_name, $last_name)
+        Functions::generate_initials($first_name, $middle_name, $last_name)
     ]);
 }
 $student->generate_csv("Student.csv", ["ID", "FirstName", "MiddleNames", "Surname", "Initials"]);
@@ -121,7 +121,7 @@ for ($i = 0; $i < $subject_count; $i++)
 {
     $subject->add_data([
         $i + 1,
-        get_random_name("middle-names.txt"),
+        Random::get_random_name("middle-names.txt"),
         rand(7, 13),
         rand(1, 8),
         rand(15, 31),
@@ -142,10 +142,10 @@ for ($i = 0; $i < $teacher_count; $i++)
         $first_name,
         $middle_name,
         $last_name,
-        generate_initials($first_name, $middle_name, $last_name),
+        Functions::generate_initials($first_name, $middle_name, $last_name),
         rand(0, 100),
-        generate_random_length_random_array(),
-        generate_random_length_random_array()
+        Random::generate_random_length_random_array(),
+        Random::generate_random_length_random_array()
     ]);
 }
 $teacher->generate_csv("Teacher.csv", ["ID", "FirstName", "MiddleName", "Surname", "Initials", "TeacherTypeID", "SubjectTaughtIDs", "RoomTaughtIDs"]);
@@ -155,8 +155,8 @@ for ($i = 0; $i < $teacher_type_count; $i++)
 {
     $teacher_type->add_data([
         $i + 1,
-        random_teacher_type("name"),
-        random_teacher_type("displayName")
+        Random::random_teacher_type("name"),
+        Random::random_teacher_type("displayName")
     ]);
 }
 $teacher_type->generate_csv("TeacherType.csv", ["ID", "Name", "DisplayName"]);
