@@ -125,7 +125,7 @@ for ($i = 0; $i < $subject_count; $i++)
 {
     $subject->add_data([
         $i + 1,
-        Random::get_random_name("middle-names.txt"),
+        Random::random_subject_name(),
         rand(7, 13),
         rand(1, 8),
         rand(15, 31),
