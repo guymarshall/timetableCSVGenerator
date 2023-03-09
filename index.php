@@ -77,16 +77,16 @@ for ($i = 0; $i < $curriculum_count; $i++)
 }
 $curriculum->generate_csv("Curriculum.csv", ["StudentID", "SubjectID", "NumberOfLessonsPerWeek"]);
 
-// fix below
-$period_schedule_data = [];
-for ($i = 0; $i < $_GET["periodScheduleCount"]; $i++)
+$period_schedule = new CSV();
+for ($i = 0; $i < $period_schedule_count; $i++)
 {
-    $period_schedule_data[] = [
-        random_day(),
-        random_number(1, 6)
-    ];
+    $period_schedule->add_data([
+        $i + 1,
+        day_from_int($i),
+        rand(1, 6)
+    ]);
 }
-generate_csv("PeriodSchedule.csv", ["dayOfWeek", "numberOfPeriods"], $period_schedule_data);
+$period_schedule->generate_csv("PeriodSchedule.csv", ["ID", "DayOfWeek", "NumberOfPeriods"]);
 
 $room_data = [];
 for ($i = 0; $i < $_GET["roomCount"]; $i++)
