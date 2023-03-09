@@ -128,11 +128,11 @@ for ($i = 0; $i < $student_count; $i++)
 
     try {
         $student->add_data([
-            $i + 1,
-            $first_name,
-            $middle_name,
-            $last_name,
-            Functions::generate_initials($first_name, $middle_name, $last_name)
+            Functions::add_quotes($i + 1),
+            Functions::add_quotes($first_name),
+            Functions::add_quotes($middle_name),
+            Functions::add_quotes($last_name),
+            Functions::add_quotes(Functions::generate_initials($first_name, $middle_name, $last_name))
         ]);
     } catch (Exception $e) {
         echo $e->getMessage();
