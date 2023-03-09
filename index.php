@@ -93,7 +93,7 @@ for ($i = 0; $i < $period_schedule_count; $i++)
         $period_schedule->add_data([
             $i + 1,
             Random::day_from_int($i),
-            rand(1, 6)
+            6
         ]);
     } catch (Exception $e) {
         echo $e->getMessage();
