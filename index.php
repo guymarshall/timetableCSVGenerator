@@ -191,8 +191,8 @@ for ($i = 0; $i < $teacher_type_count; $i++)
     try {
         $teacher_type->add_data([
             $i + 1,
-            Random::random_teacher_type("name"),
-            Random::random_teacher_type("displayName")
+            Functions::add_quotes(Random::random_teacher_type("name")),
+            Functions::add_quotes(Random::random_teacher_type("displayName"))
         ]);
     } catch (Exception $e) {
         echo $e->getMessage();
