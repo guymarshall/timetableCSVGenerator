@@ -75,7 +75,7 @@ for ($i = 0; $i < $curriculum_count; $i++)
         rand(1, 9)
     ]);
 }
-$curriculum->generate_csv("Curriculum.csv", ["StudentID", "SubjectID", "NumberOfLessonsPerWeek"]);
+$curriculum->generate_csv("Curriculum.csv", ["ID", "StudentID", "SubjectID", "NumberOfLessonsPerWeek"]);
 
 $period_schedule = new CSV();
 for ($i = 0; $i < $period_schedule_count; $i++)
@@ -88,73 +88,78 @@ for ($i = 0; $i < $period_schedule_count; $i++)
 }
 $period_schedule->generate_csv("PeriodSchedule.csv", ["ID", "DayOfWeek", "NumberOfPeriods"]);
 
-$room_data = [];
-for ($i = 0; $i < $_GET["roomCount"]; $i++)
+$room = new CSV();
+for ($i = 0; $i < $room_count; $i++)
 {
-    $room_data[] = [
+    $room->add_data([
+        $i + 1,
         random_room(),
-        random_number(15, 31)
-    ];
+        rand(15, 31)
+    ]);
 }
-generate_csv("Room.csv", ["name", "maximumClassSize"], $room_data);
+$room->generate_csv("Room.csv", ["ID", "Name", "MaximumClassSize"]);
 
-$student_data = [];
-for ($i = 0; $i < $_GET["studentCount"]; $i++)
+$student = new CSV();
+for ($i = 0; $i < $student_count; $i++)
 {
     $first_name = get_random_name("first-names.txt");
     $middle_name = get_random_name("middle-names.txt");
     $last_name = get_random_name("middle-names.txt");
 
-    $student_data[] = [
+    $student->add_data([
+        $i + 1,
         $first_name,
         $middle_name,
         $last_name,
         generate_initials($first_name, $middle_name, $last_name)
-    ];
+    ]);
 }
-generate_csv("Student.csv", ["firstName", "middleNames", "surname", "initials"], $student_data);
+$student->generate_csv("Student.csv", ["ID", "FirstName", "MiddleNames", "Surname", "Initials"]);
 
-$subject_data = [];
-for ($i = 0; $i < $_GET["subjectCount"]; $i++)
+$subject = new CSV();
+for ($i = 0; $i < $subject_count; $i++)
 {
-    $subject_data[] = [
+    $subject->add_data([
+        $i + 1,
         get_random_name("middle-names.txt"),
-        random_number(7, 13),
-        random_number(1, 8),
-        random_number(15, 31),
-        random_number(1, 8)
-    ];
+        rand(7, 13),
+        rand(1, 8),
+        rand(15, 31),
+        rand(1, 8)
+    ]);
 }
-generate_csv("Subject.csv", ["subjectName", "subjectYear", "set", "maximumClassSize", "roomsTaught"], $subject_data);
+$subject->generate_csv("Subject.csv", ["ID", "SubjectName", "SubjectYear", "Set", "MaximumClassSize", "RoomsTaught"]);
 
-$teacher_data = [];
-for ($i = 0; $i < $_GET["teacherCount"]; $i++)
+$teacher = new CSV();
+for ($i = 0; $i < $teacher_count; $i++)
 {
     $first_name = get_random_name("first-names.txt");
     $middle_name = get_random_name("middle-names.txt");
     $last_name = get_random_name("middle-names.txt");
 
-    $teacher_data[] = [
+    $teacher->add_data([
+        $i + 1,
         $first_name,
         $middle_name,
         $last_name,
         generate_initials($first_name, $middle_name, $last_name),
-        random_number(0, 100),
+        rand(0, 100),
         generate_random_length_random_array(),
         generate_random_length_random_array()
-    ];
+    ]);
 }
-generate_csv("Teacher.csv", ["firstName", "middleName", "surname", "initials", "teacherTypeID", "subjectTaughtIDs", "roomTaughtIDs"], $teacher_data);
+$teacher->generate_csv("Teacher.csv", ["ID", "FirstName", "MiddleName", "Surname", "Initials", "TeacherTypeID", "SubjectTaughtIDs", "RoomTaughtIDs"]);
 
-$teacher_type_data = [];
-for ($i = 0; $i < $_GET["teacherTypeCount"]; $i++)
+$teacher_type = new CSV();
+for ($i = 0; $i < $teacher_type_count; $i++)
 {
-    $teacher_type_data[] = [
+    $teacher_type->add_data([
+        $i + 1,
         random_teacher_type("name"),
         random_teacher_type("displayName")
-    ];
+    ]);
 }
-generate_csv("TeacherType.csv", ["name", "displayName"], $teacher_type_data);
+$teacher_type->generate_csv("TeacherType.csv", ["ID", "Name", "DisplayName"]);
 
 /*
 println!("CSV Generator - Enter counts for the following prompts to generate your .CSV file.");
