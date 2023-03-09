@@ -66,6 +66,10 @@ $subject_count = $_GET['subjectCount'];
 $teacher_count = $_GET['teacherCount'];
 $teacher_type_count = $_GET['teacherTypeCount'];
 
+$first_names = File::get_names("first_names.txt");
+$middle_names = File::get_names("middle_names.txt");
+$last_names = File::get_names("last_names.txt");
+
 $curriculum = new CSV();
 for ($i = 0; $i < $curriculum_count; $i++)
 {
