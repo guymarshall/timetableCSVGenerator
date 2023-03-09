@@ -121,9 +121,9 @@ $room->generate_csv("Room.csv", ["ID", "Name", "MaximumClassSize"]);
 $student = new CSV();
 for ($i = 0; $i < $student_count; $i++)
 {
-    $first_name = $first_names[rand(0, count($first_names) - 1)];
-    $middle_name = $middle_names[rand(0, count($middle_names) - 1)];
-    $last_name = $last_names[rand(0, count($last_names) - 1)];
+    $first_name = $first_names[Random::random_name($first_names)];
+    $middle_name = $middle_names[Random::random_name($middle_names)];
+    $last_name = $last_names[Random::random_name($last_names)];
 
     try {
         $student->add_data([
@@ -162,9 +162,9 @@ $subject->generate_csv("Subject.csv", ["ID", "SubjectName", "SubjectYear", "Set"
 $teacher = new CSV();
 for ($i = 0; $i < $teacher_count; $i++)
 {
-    $first_name = $first_names[rand(0, count($first_names) - 1)];
-    $middle_name = $middle_names[rand(0, count($middle_names) - 1)];
-    $last_name = $last_names[rand(0, count($last_names) - 1)];
+    $first_name = $first_names[Random::random_name($first_names)];
+    $middle_name = $middle_names[Random::random_name($middle_names)];
+    $last_name = $last_names[Random::random_name($last_names)];
 
     try {
         $teacher->add_data([
