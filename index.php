@@ -73,11 +73,16 @@ $last_names = File::get_names("last_names.txt");
 $curriculum = new CSV();
 for ($i = 0; $i < $curriculum_count; $i++)
 {
-    $curriculum->add_data([
-        $i + 1,
-        rand(1, $subject_count + 1),
-        rand(1, 9)
-    ]);
+    try {
+        $curriculum->add_data([
+            $i + 1,
+            rand(1, $subject_count + 1),
+            rand(1, 9)
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $curriculum->generate_csv("Curriculum.csv", ["ID", "StudentID", "SubjectID", "NumberOfLessonsPerWeek"]);
 
@@ -95,11 +100,16 @@ $period_schedule->generate_csv("PeriodSchedule.csv", ["ID", "DayOfWeek", "Number
 $room = new CSV();
 for ($i = 0; $i < $room_count; $i++)
 {
-    $room->add_data([
-        $i + 1,
-        Random::random_room(),
-        rand(15, 31)
-    ]);
+    try {
+        $room->add_data([
+            $i + 1,
+            Random::random_room(),
+            rand(15, 31)
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $room->generate_csv("Room.csv", ["ID", "Name", "MaximumClassSize"]);
 
@@ -123,14 +133,19 @@ $student->generate_csv("Student.csv", ["ID", "FirstName", "MiddleNames", "Surnam
 $subject = new CSV();
 for ($i = 0; $i < $subject_count; $i++)
 {
-    $subject->add_data([
-        $i + 1,
-        Random::random_subject_name(),
-        rand(7, 13),
-        rand(1, 8),
-        rand(15, 31),
-        rand(1, 8)
-    ]);
+    try {
+        $subject->add_data([
+            $i + 1,
+            Random::random_subject_name(),
+            rand(7, 13),
+            rand(1, 8),
+            rand(15, 31),
+            rand(1, 8)
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $subject->generate_csv("Subject.csv", ["ID", "SubjectName", "SubjectYear", "Set", "MaximumClassSize", "RoomsTaught"]);
 
@@ -157,11 +172,16 @@ $teacher->generate_csv("Teacher.csv", ["ID", "FirstName", "MiddleName", "Surname
 $teacher_type = new CSV();
 for ($i = 0; $i < $teacher_type_count; $i++)
 {
-    $teacher_type->add_data([
-        $i + 1,
-        Random::random_teacher_type("name"),
-        Random::random_teacher_type("displayName")
-    ]);
+    try {
+        $teacher_type->add_data([
+            $i + 1,
+            Random::random_teacher_type("name"),
+            Random::random_teacher_type("displayName")
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $teacher_type->generate_csv("TeacherType.csv", ["ID", "Name", "DisplayName"]);
 
