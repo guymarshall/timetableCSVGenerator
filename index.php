@@ -76,6 +76,7 @@ for ($i = 0; $i < $curriculum_count; $i++)
     try {
         $curriculum->add_data([
             $i + 1,
+            rand(1, $student_count),
             rand(1, $subject_count + 1),
             rand(1, 9)
         ]);
