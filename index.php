@@ -89,11 +89,16 @@ $curriculum->generate_csv("Curriculum.csv", ["ID", "StudentID", "SubjectID", "Nu
 $period_schedule = new CSV();
 for ($i = 0; $i < $period_schedule_count; $i++)
 {
-    $period_schedule->add_data([
-        $i + 1,
-        Random::day_from_int($i),
-        rand(1, 6)
-    ]);
+    try {
+        $period_schedule->add_data([
+            $i + 1,
+            Random::day_from_int($i),
+            rand(1, 6)
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $period_schedule->generate_csv("PeriodSchedule.csv", ["ID", "DayOfWeek", "NumberOfPeriods"]);
 
@@ -120,13 +125,18 @@ for ($i = 0; $i < $student_count; $i++)
     $middle_name = $middle_names[rand(0, count($middle_names) - 1)];
     $last_name = $last_names[rand(0, count($last_names) - 1)];
 
-    $student->add_data([
-        $i + 1,
-        $first_name,
-        $middle_name,
-        $last_name,
-        Functions::generate_initials($first_name, $middle_name, $last_name)
-    ]);
+    try {
+        $student->add_data([
+            $i + 1,
+            $first_name,
+            $middle_name,
+            $last_name,
+            Functions::generate_initials($first_name, $middle_name, $last_name)
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $student->generate_csv("Student.csv", ["ID", "FirstName", "MiddleNames", "Surname", "Initials"]);
 
@@ -156,16 +166,21 @@ for ($i = 0; $i < $teacher_count; $i++)
     $middle_name = $middle_names[rand(0, count($middle_names) - 1)];
     $last_name = $last_names[rand(0, count($last_names) - 1)];
 
-    $teacher->add_data([
-        $i + 1,
-        $first_name,
-        $middle_name,
-        $last_name,
-        Functions::generate_initials($first_name, $middle_name, $last_name),
-        rand(0, 100),
-        Random::random_length_random_array(),
-        Random::random_length_random_array()
-    ]);
+    try {
+        $teacher->add_data([
+            $i + 1,
+            $first_name,
+            $middle_name,
+            $last_name,
+            Functions::generate_initials($first_name, $middle_name, $last_name),
+            rand(0, 100),
+            Random::random_length_random_array(),
+            Random::random_length_random_array()
+        ]);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
 }
 $teacher->generate_csv("Teacher.csv", ["ID", "FirstName", "MiddleName", "Surname", "Initials", "TeacherTypeID", "SubjectTaughtIDs", "RoomTaughtIDs"]);
 
