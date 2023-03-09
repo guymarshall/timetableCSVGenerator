@@ -170,13 +170,13 @@ for ($i = 0; $i < $teacher_count; $i++)
     try {
         $teacher->add_data([
             $i + 1,
-            $first_name,
-            $middle_name,
-            $last_name,
-            Functions::generate_initials($first_name, $middle_name, $last_name),
-            rand(0, 100),
-            Random::random_length_random_array(),
-            Random::random_length_random_array()
+            Functions::add_quotes($first_name),
+            Functions::add_quotes($middle_name),
+            Functions::add_quotes($last_name),
+            Functions::add_quotes(Functions::generate_initials($first_name, $middle_name, $last_name)),
+            rand(1, $teacher_type_count),
+            Functions::array_to_quoted_string(Random::random_length_random_array()),
+            Functions::array_to_quoted_string(Random::random_length_random_array())
         ]);
     } catch (Exception $e) {
         echo $e->getMessage();
